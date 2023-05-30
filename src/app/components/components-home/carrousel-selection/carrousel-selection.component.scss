@@ -1,0 +1,45 @@
+.carrousel{
+  margin: var(--padding-interior-top) auto;
+  max-width: var(--max-width-content);
+  width: 100%;
+  overflow: hidden;
+}
+.carrousel-header{
+  display: block;
+  width: 100%;
+}
+.carrousel-title{
+  display: block;
+  width: 90%;
+}
+.carrousel-arrows{
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  .carrousel-arrows-left,
+  .carrousel-arrows-right{
+    padding: var(--padding-min);
+    background-color: var(--pure-white);
+    border-radius: var(--border-radius-tags);
+    box-shadow: var(--shadow);
+    margin-left: var(--padding-min);
+    cursor: pointer;
+  }
+}
+
+.carrousel-wrap{
+  padding: var(--padding-interior-top) 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-column-gap: .4%;
+  transform: translate(0%);
+  transition: var(--transition);
+}
+
+
+
+
+

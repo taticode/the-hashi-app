@@ -1,0 +1,66 @@
+.banner{
+
+  margin: var(--padding-interior-left) auto;
+  padding: var(--padding-global) var(--padding-interior-left);
+  max-width: var(--max-width-content);
+  background: url("/assets/patterns/red-white-yellow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.banner--content{
+  width: 30%;
+  margin: 0 var(--padding-global);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  &.name{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: var(--pure-white);
+    border-radius: 50%;
+  }
+  &.claim{
+    padding: var(--padding-global);
+    width: 12em;
+    height: 12em;
+    border-radius: 50%;
+    background: var(--font-color);
+    color: var(--pure-white);
+    transform: rotate(-20deg);
+    span{
+      font-size: var(--font-claim);
+    }
+
+
+  }
+}
+.banner--logo{
+  width: 10em;
+  margin: 0 auto;
+}
+.banner--title{
+  font-size: var(--font-claim);
+}
+
+
+.banner-big-img{
+  width: 100%;
+  max-height: 13em;
+  border: 6px solid var(--pure-white);
+  border-radius: var(--border-radius-claim-img);
+
+}

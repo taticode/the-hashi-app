@@ -1,0 +1,42 @@
+
+
+
+<section class="wellcome">
+
+
+  <div class="wellcome--decoration">
+
+      <img class="uno"src="/assets/icons/ramen.png" alt="">
+      <img class="dos"src="/assets/icons/dumpling-steam.png" alt="">
+      <img class="tres"src="/assets/icons/bonsai.png" alt="">
+      <img class="cuatro"src="/assets/icons/sushi.png" alt="">
+      <img class="cinco"src="/assets/icons/gyoza.png" alt="">
+      <img class="seis"src="/assets/icons/rice-bowl.png" alt="">
+
+  </div>
+
+
+  <div class="wellcome--form">
+    <h1 class="wellcome--title">Descubre y reserva el mejor restaurante asiático</h1>
+    <form autocomplete="off" action="">
+      <label for="que">¿Qué?</label>
+      <input id="id" type="text" placeholder="">
+      <ul class="busqueda">
+        <li *ngFor="let restaurante of restaurantes">
+          <h2>{{restaurante.name}}</h2>
+          <div *ngIf="restaurante.address">
+            <p *ngIf="restaurante.address">
+              {{restaurante.address.street}}, Nº {{restaurante.address.streetNumber}} <span *ngIf="restaurante.address.building">({{restaurante.address.building}})</span>, {{restaurante.address.cp}}, {{restaurante.address.city}}
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <label for="donde">¿Dónde?</label>
+      <input id="donde" type="text" placeholder="Ubicación">
+      <button class="ok-button" type="submit">BÚSQUEDA</button>
+    </form>
+
+  </div>
+
+</section>

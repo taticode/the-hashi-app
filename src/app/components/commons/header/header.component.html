@@ -1,0 +1,13 @@
+
+
+<header>
+    <div class="header--logo">
+      <img src="/assets/brand/logo.svg" alt="logo The Hashi">
+    </div>
+    <ul class="header--menu">
+      <a  *ngFor="let item of items" [href]="item.link">
+        <img *ngIf="item.img" [src]="item.img" alt="">
+        <li>{{item.text}}</li>
+      </a>
+    </ul>
+</header>

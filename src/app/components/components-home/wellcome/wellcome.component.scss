@@ -1,0 +1,95 @@
+
+@keyframes bounce {
+	0% {
+
+		transform: translateY(50px);
+
+	}
+
+	50% {
+
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(50px);
+	}
+}
+
+@keyframes lights {
+  0%{
+    opacity: 100%;
+  }
+  10% {
+    opacity: 50%;
+  }
+  80% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+.wellcome{
+
+  max-width: var(--max-width-content);
+  margin: var(--padding-interior-top) auto;
+  padding-top: var(--padding-interior-top);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+}
+
+
+.wellcome--decoration{
+  width: 50%;
+  height: 100%;
+  margin-right: var(--padding-interior-top);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--padding-interior-left);
+  grid-auto-rows: minmax(100px, auto);
+
+  img{
+    opacity: 100%;
+    animation-delay: 1s;
+    //animation: lights 10s ease-in-out infinite;
+  }
+  .uno{
+    animation-delay: 1s;
+  }
+  .dos{
+    animation-delay: 2s;
+  }
+  .tres{
+    animation-delay: 3s;
+  }
+  .cuatro{
+    animation-delay: 4s;
+  }
+  .cinco{
+    animation-delay: 5s;
+  }
+  .seis{
+    animation-delay: 6s;
+  }
+
+}
+
+
+.wellcome--form{
+  width: 50%;
+
+  form{
+    position: relative;
+
+  }
+
+}
+

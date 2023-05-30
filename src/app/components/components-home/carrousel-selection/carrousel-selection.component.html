@@ -1,0 +1,60 @@
+
+<section class="carrousel">
+  <div class="carrousel-header">
+    <h1 class="carrousel-title" >Selecciones The Hashi</h1>
+    <div class="carrousel-arrows">
+      <button class="carrousel-arrows-left" (click)="disminuirContador()">
+        <svg class="carrousel__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg>
+      </button>
+      <button class="carrousel-arrows-right" (click)="aumentarContador()">
+        <svg class="carrousel__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+      </button>
+    </div>
+  </div>
+
+  <ul class="carrousel-wrap"
+  [ngStyle]="{
+    'width' : valorAncho(),
+    'grid-template-columns' : valorGrid(),
+    'transform': moverX()
+  }" >
+      <li class="card" *ngFor="let restaurante of restaurantes; let i = index" (click)="setContador(i)">
+        <div  class="card-badge" *ngIf="restaurante.noboriBadge">
+          <img src="/assets/icons/nobori-badge.png" alt="Insider" [title]="restaurante.noboriBadge"  >
+        </div>
+        <img class="card-img" loading="lazy"[src]="restaurante.thumbnail" alt="">
+
+        <div class="card-info card-info">
+          <ul  *ngIf="restaurante.tipo" class="card-food-type">
+            <li *ngFor="let type of restaurante.tipo" >{{type}}</li>
+          </ul>
+          <div class="card-wrap-rate">
+            <h2 class="card-title">{{restaurante.name}}</h2>
+            <p *ngIf="restaurante.rate" class="card-rate">{{restaurante.rate}}</p>
+          </div>
+          <h2 *ngIf="restaurante.subtitle" class="card-subtitle">{{restaurante.subtitle}}</h2>
+          <ul class="card-tags" *ngIf="restaurante.tags">
+            <li class="card-cathegory" *ngFor="let tag of restaurante.tags" [class]="tag.class">
+              <img class="tag-icon" *ngIf="tag.icon" [src]="tag.icon" alt="">
+              {{tag.tagName}}</li>
+          </ul>
+          <ul *ngIf="restaurante.address" class="card-addres">
+            <li>
+              {{restaurante.address.street}}, Nº {{restaurante.address.streetNumber}} <span *ngIf="restaurante.address.building">({{restaurante.address.building}})</span>, {{restaurante.address.cp}}, {{restaurante.address.city}}
+            </li>
+          </ul>
+          <p *ngIf="restaurante.mediumPrice" class="card-price">{{ restaurante.mediumPrice }} € de precio medio</p>
+          <span *ngIf="restaurante.discount" class="card-discount">- {{restaurante.discount}} % de descuento</span>
+          <ul *ngIf="restaurante.discounts" class="card-tags">
+            <li *ngFor="let discount of restaurante.discounts" [class]="discount.class">
+            - {{discount.value}} %
+           </li>
+          </ul>
+        </div>
+      </li>
+  </ul>
+</section>
